@@ -112,7 +112,7 @@ def main():
                 # ax.set_ylim(0,7)
                 # ax.grid(True)
 
-                fig, ax = plt.subplots()
+                fig, ax = plt.subplots(figsize=(10,6))
                 ax.plot(timestamps, frames)
                 ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
                 ax.set_xticks(np.arange(0, timestamps[-1], 10))
@@ -123,7 +123,7 @@ def main():
                 ax.grid(True)
                 
                 # Display the graph
-                st.pyplot(fig, figsize=(5,5))
+                st.pyplot(fig)
             else:
                 # Display a message if there are no timestamps
                 st.text("No frames to display.")
