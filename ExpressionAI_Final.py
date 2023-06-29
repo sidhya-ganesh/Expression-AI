@@ -98,19 +98,28 @@ def main():
         with col2:
             if len(timestamps) > 0:
             
-                fig, ax = plt.subplots()
+                # fig, ax = plt.subplots()
               
-                ax.plot(timestamps, frames, color=user_colour)
+                # ax.plot(timestamps, frames, color=user_colour)
+                # ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
+
+                # ax.set_xticks(np.arange(0, timestamps[-1], 10))
+                # ax.set_yticks(range(len(frames)))
+                # ax.set_yticklabels(list(set(frames)), rotation="vertical", fontsize='small', ha="center")
+
+                # ax.yaxis.labelpad=20
+                # ax.xaxis.labelpad=20
+                # ax.set_ylim(0,7)
+                # ax.grid(True)
+
+                fig, ax = plt.subplots()
+                ax.plot(timestamps, frames)
                 ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
-
                 ax.set_xticks(np.arange(0, timestamps[-1], 10))
-                ax.set_yticks(range(len(frames)))
-                ax.set_yticklabels(list(set(frames)), rotation="vertical", fontsize='small', ha="center")
-
-
-                ax.yaxis.labelpad=20
-                ax.xaxis.labelpad=20
-                ax.set_ylim(0,7)
+                unique_emotions = list(set(frames))
+                ax.set_yticks(range(len(unique_emotions)))
+                ax.set_yticklabels(unique_emotions)
+                ax.tick_params(axis='y', pad=10)  # Adjust the padding between ticks and tick labels
                 ax.grid(True)
                 
                 # Display the graph
