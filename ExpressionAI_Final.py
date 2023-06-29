@@ -112,7 +112,7 @@ def main():
                 # ax.set_ylim(0,7)
                 # ax.grid(True)
 
-                fig, ax = plt.subplots(figsize=(10,10))
+                fig, ax = plt.subplots(figsize=(10,8))
                 ax.plot(timestamps, frames, color=user_colour)
                 ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
                 ax.set_xticks(np.arange(0, timestamps[-1], 10))
