@@ -104,8 +104,9 @@ def main():
                 ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
 
                 ax.set_xticks(np.arange(0, timestamps[-1], 10))
-                ax.set_yticks(range(len(frames)))
-                ax.set_yticklabels(set(frames), rotation="vertical", fontsize='small', ha="center")
+                ax.set_yticks(range(len(frames)), labels=set(frames))
+                #ax.set_yticklabels(set(frames), rotation="vertical", fontsize='small', ha="center")
+
 
                 ax.yaxis.labelpad=20
                 ax.xaxis.labelpad=20
