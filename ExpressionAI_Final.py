@@ -112,8 +112,8 @@ def main():
                 # ax.set_ylim(0,7)
                 # ax.grid(True)
 
-                fig, ax = plt.subplots(figsize=(10,6))
-                ax.plot(timestamps, frames)
+                fig, ax = plt.subplots(figsize=(10,10))
+                ax.plot(timestamps, frames, color=user_colour)
                 ax.set(xlabel="Time (s)", ylabel="Emotion", title="Emotion over time")
                 ax.set_xticks(np.arange(0, timestamps[-1], 10))
                 unique_emotions = list(set(frames))
